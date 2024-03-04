@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="assets/css/styles.css">
-
+        <script src="https://cdn.tailwindcss.com"></script>
         <!-- =====BOX ICONS===== -->
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/b51e3502cf.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <title>Dipesh Thakur</title>
         <style>
             @keyframes wave {
@@ -43,6 +43,84 @@
                 display: inline-block;
                 transform-origin: 70% 70%;
             }
+    
+            .icon-text {
+                color: #6b7280;
+                transition: color 0.3s;
+            }
+            .text-color {
+                color: #6b7280;
+            }
+            .icon-text:hover{
+                color: var(--first-color);
+            }
+            .checklist i {
+                color: #6b7280; /* Setting the checklist icon color to gray */
+            }
+            .checklist li {
+                color: #6b7280; /* Setting the checklist text color to gray */
+            }
+            .card {
+                background-color: white;
+                border-radius: 0.5rem;
+                padding: 2rem;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .card img {
+                width: 100%; /* sets the width of the image to fill the container */
+                height: auto; /* maintains the aspect ratio */
+                max-width: 180px; /* maximum width */
+                display: block; /* removes bottom space/aligns properly */
+                margin: 0 auto 1rem; /* centers the image and adds space below */
+            }   
+            .card h2 {
+                font-size: 1.25rem; /* 20px */
+                font-weight: 700;
+            }
+            .card p {
+                font-size: 1rem; /* 16px */
+                color: #6b7280; /* Gray text */
+            }
+            .card a {
+                font-size: 0.875rem; /* 14px */
+                text-decoration: none;
+                color: #3b82f6; /* Blue text */
+            }
+            .card a:hover {
+                text-decoration: none;
+            }
+            .button_menu {
+                display: inline-block;
+                text-decoration: none;
+                color: cornsilk !important;
+                background-color: var(--first-color);
+                padding: 0.1rem 0.5rem;
+                border-radius: 2.5rem; 
+                transition: background-color 0.3s ease-in-out;
+                margin-right: 0.5rem;
+                margin-bottom: 0.5rem;
+                margin-top: 0.5rem;
+            }
+            .button_menu:hover {
+                background-color: rgb(65, 86, 243); /* Darker blue on hover */
+            }
+            .button-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 0.5rem; /* replaces space-x-2 to handle both vertical and horizontal spacing */
+            }
+            .glass {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 20px;
+                border: 1px, solid rgba(255, 255, 255, 0.18);
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            }
+            
+  </style>
 
         </style>
     </head>
@@ -51,7 +129,9 @@
         <header class="l-header">
             <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">Dipesh Thakur</a>
+                    <span class="grey-color">&lt;</span>
+                    <a href="#" class="signature-logo">Dipesh Thakur</a>
+                    <span class="grey-color">/&gt;</span>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
@@ -61,10 +141,9 @@
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
-                </div>
-
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class='bx bx-menu'></i>
+                    <button id="dark-mode-toggle" class="nav__toggle">
+                        <i class='bx bx-moon'></i>
+                    </button>
                 </div>
             </nav>
         </header>
@@ -73,7 +152,7 @@
             <!--===== HOME =====-->
             <section class="home bd-grid" id="home">
                 <div class="home__data">
-                    <h1 class="home__title">Hi<div class="waving-hand"><img alt="👋" draggable="false" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png" style="height: 1em; width: 1em; margin: 0px 0.05em 0px 0.1em; vertical-align: -0.1em; padding-left: 0.1em;"></div><br>I'am <span class="home__title-color">Dipesh</span><br> Software Developer <br>Cyber Security <br>Professional <i class="fa-solid fa-terminal fa-flip fa-sm" style="color:#3D98E4"></i></h1>
+                    <h1 class="home__title">Hi<div class="waving-hand"><img alt="👋" draggable="false" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f44b.png" style="height: 1em; width: 1em; margin: 0px 0.05em 0px 0.1em; vertical-align: -0.1em; padding-left: 0.1em;"></div><br>I'am <span class="home__title-color">Dipesh</span><br> Software Developer <br>Cyber Security <br>Professional <i class="fa-solid fa-terminal fa-flip fa-sm" style="color:var(--first-color)"></i></h1>
 
                     
                 </div>
@@ -101,7 +180,7 @@
             </section>
 
             <!--===== ABOUT =====-->
-            <section class="about section " id="about">
+            <section class="about section" id="about">
                 <h2 class="section-title">About</h2>
 
                 <div class="about__container bd-grid">
@@ -110,12 +189,26 @@
                     </div>
                     
                     <div>
-                        
-                        <p class="about__text">A Dynamic Cybersecurity Professional and Full Stack Web Developer with a specialized skill set in Penetration Testing. With a robust background in securing digital environments and developing versatile web solutions, I bring a unique blend of technical expertise and innovative problem-solving to every project.
+                        <p class="text-xl font-regular mb-6 text-color">Crazy Full Stack Developer & Cyber Seurity Specialist who wants to explore every tech stack...</p>
+                        <div class="grid grid-cols-8 gap-5 mb-6 text-center">
+                            <div class="icon-text"><i class="fab fa-html5 fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-css3-alt fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-sass fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-js fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-react fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-node fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-swift fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-npm fa-3x"></i></div>
+                            <div class="icon-text"><i class="fas fa-database fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-aws fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-docker fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-python fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-linux fa-3x"></i></div>
+                            <div class="icon-text"><i class="fa fa-shield-alt fa-3x"></i></div>
+                            <div class="icon-text"><i class="fab fa-apple fa-3x"></i></div>
+                            <div class="icon-text"><i class="fa fa-bug fa-3x"></i></div>
 
-                            <br>My career is built on a foundation of rigorous analysis and strategic defenses against evolving cyber threats. With a keen eye for vulnerabilities and a passion for code, I deliver secure and scalable applications that stand the test of time and cyber challenges.
-                            
-                            <br>Driven by the thrill of the hack and the precision of clean code, I'm dedicated to empowering businesses with resilient digital infrastructures. Let's fortify your presence in the cyber world together.</p>           
+                        </div>          
                     </div>                                   
                 </div>
             </section>
@@ -126,7 +219,6 @@
 
                 <div class="skills__container bd-grid">          
                     <div>
-                        <h2 class="skills__subtitle">Profesional Skills</h2>
                         <p class="skills__text">As a cybersecurity professional, I specialize in identifying and addressing security vulnerabilities through ethical hacking and penetration testing. With expertise in cybersecurity tools and technologies, I implement robust defenses to protect against threats. My proactive incident response and risk management skills ensure the confidentiality and integrity of critical data</p>
                         <div class="skills__data">
                             <div class="skills__names">
@@ -184,6 +276,42 @@
                 </div>
             </section>
 
+            <section class="works section" id="works">
+                <div class="container mx-auto px-4 py-12">
+                    <h2 class="section-title">Achievements & Certifications</h2>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="card">
+                            <img src="https://1.bp.blogspot.com/-Ig-v1tDXZt4/XDODmZvWp1I/AAAAAAAAB0A/KtbFdBPFVQw2O15FekkIR0Yg8MUp--rngCLcBGAs/s1600/GCI%2B-%2BVertical%2B-%2BGray%2BText%2B-%2BWhite%2BBG.png" style="width: 100%; height: auto; max-width: 210px; display: block; margin: 0 auto 1rem;" alt="Placeholder for Google Code-in logo">
+                            <h4 class="text-color underline text-center">Google Code-in Finalist</h4>
+                            <p class="text-center">Selected as Google Code-in Finalist from 4000 students from 77 different countries.</p>
+                            <div class="button-container">
+                            <div class="flex space-x-2">
+                              <a href="#" class="button_menu">Award Letter</a>
+                            </div>
+                            </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.credly.com/size/340x340/images/ae9a98b9-240b-47b1-9105-acd4f019ed1a/CEH_Badge.png" alt="Placeholder for PWA logo">
+                        <h4 class="text-color underline text-center">Certified Ethical Hacker CEHv12</h4>
+                        <p class="text-center">Completed Certification from EC-Council for Certified Ethical Hacker</p>
+                        <div class="button-container">
+                        <div class="flex space-y-4">
+                            <a href="#" class="button_menu">Certification</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.credly.com/size/340x340/images/ec81134d-e80b-4eb5-ae07-0eb8e1a60fcd/image.png" alt="Placeholder for PWA logo">
+                        <h4 class="text-color underline text-center">Offensice Security Certfied Professional</h4>
+                        <p class="text-center">Pursuing OSCP Certification from Offsec Services Limited</p>
+                        <div class="button-container">
+                        <div class="flex space-y-4">
+                        <a href="#" class="button_menu">Certification</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">
@@ -194,7 +322,7 @@
                         <input type="text" placeholder="Name" class="contact__input">
                         <input type="mail" placeholder="Email" class="contact__input">
                         <textarea name="" placeholder="Message" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Submit" class="contact__button button">
+                        
                     </form>
                 </div>
             </section>
